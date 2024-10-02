@@ -1,6 +1,3 @@
-Certainly! I'll create a README.md file for your PDF to Text Converter project. This README will include an explanation of the project, its features, setup instructions, and usage guide.
-
-```markdown:README.md
 # PDF to Text Converter
 
 ## Description
@@ -96,5 +93,5 @@ This project is open source and available under the [MIT License](LICENSE).
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
 
-```
+
 
