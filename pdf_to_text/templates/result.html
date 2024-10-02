@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Extracted Text</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            border-radius: 1rem;
+        }
+        pre {
+            white-space: pre-wrap; /* Allows the text to wrap */
+            word-wrap: break-word; /* Prevents overflow */
+            font-size: 1.2rem; /* Increased font size for readability */
+            height: 700px; /* Set a max height for the text area */
+            overflow-y: auto; /* Enable scrolling */
+        }
+        .action-buttons {
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        function copyText() {
+            const textToCopy = document.getElementById('extractedText').innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Text copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow w-75">
+        <div class="card-body">
+            <h1 class="h3 font-weight-bold text-center mb-4"><i class="fas fa-file-alt"></i> Extracted Text</h1>
+            <div class="form-group">
+                <pre id="extractedText" class="border p-3 bg-light rounded">{{ text }}</pre>
+            </div>
+            <div class="text-center action-buttons">
+                <button onclick="copyText()" class="btn btn-primary btn-lg mx-2"><i class="fas fa-copy"></i> Copy Text</button>
+                <button onclick="window.location.href='/'" class="btn btn-secondary btn-lg mx-2"><i class="fas fa-upload"></i> Upload Another PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
